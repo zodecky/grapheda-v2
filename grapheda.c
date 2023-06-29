@@ -111,7 +111,7 @@ void printgraph(struct Graph *graph)
         printf("\n%c: ", v + 'A'); // imprime o vertice
         while (temp)
         {
-            printf("%c -> ", temp->vtx + 'A'); // e sua lista de adjacentes
+            printf("%c, %d -> ", temp->vtx + 'A', temp->dist); // e sua lista de adjacentes
             temp = temp->next;
         }
         printf("(null)\n"); // null no final
@@ -214,6 +214,8 @@ int main()
     printf("\n------- ---- -----: %c -> %c = %d\n", 'A', 'F', caminho_mais_curto(graph, A, F));
     printf("\n------- ---- -----: %c -> %c = %d\n", 'A', 'G', caminho_mais_curto(graph, A, G));
     printf("\n------- ---- -----: %c -> %c = %d\n", 'A', 'H', caminho_mais_curto(graph, A, H));
+
+    printf("\n----------------------------------------\n");
 
     printf("\nBusca por profundidade (DFS):\n");
     DFS(graph, A);
